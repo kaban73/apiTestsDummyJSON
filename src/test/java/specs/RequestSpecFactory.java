@@ -1,5 +1,6 @@
 package specs;
 
+import config.Config;
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
 
@@ -15,14 +16,14 @@ public class RequestSpecFactory {
         return given()
                 .accept(ContentType.JSON)
                 .contentType(ContentType.JSON)
-                .baseUri("https://dummyjson.com/");
+                .baseUri(Config.baseUrl());
     }
 
     public static RequestSpecification authSpec(String token) {
         return given()
                 .accept(ContentType.JSON)
                 .contentType(ContentType.JSON)
-                .baseUri("https://dummyjson.com/")
+                .baseUri(Config.baseUrl())
                 .header("Authorization", "Bearer " + token);
     }
 }
