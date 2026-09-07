@@ -18,7 +18,7 @@ public class AuthTests {
         );
         AuthClient authClient = new AuthClient();
 
-        Response response = authClient.authLogin(request);
+        Response response = authClient.login(request);
 
         response.then().statusCode(200);
 
@@ -26,6 +26,10 @@ public class AuthTests {
 
         assertTrue(loginResponse.id() > 0);
         assertEquals(loginResponse.username(), request.username());
+        assertNotNull(loginResponse.accessToken());
+        assertFalse(loginResponse.accessToken().isBlank());
+        assertNotNull(loginResponse.refreshToken());
+        assertFalse(loginResponse.refreshToken().isBlank());
     }
 
 }

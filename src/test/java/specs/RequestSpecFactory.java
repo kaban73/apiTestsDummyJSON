@@ -23,6 +23,6 @@ public class RequestSpecFactory {
                 .accept(ContentType.JSON)
                 .contentType(ContentType.JSON)
                 .baseUri("https://dummyjson.com/")
-                .param("Bearer: " + token);
+                .header("Authorization", "Bearer " + token);
     }
 }
