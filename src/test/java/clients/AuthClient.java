@@ -17,4 +17,12 @@ public class AuthClient {
                     .post("/auth/login");
     }
 
+    public Response auth(String accessToken) {
+        return
+                given()
+                        .spec(RequestSpecFactory.authSpec(accessToken))
+                .when()
+                        .get("/auth/me");
+    }
+
 }
