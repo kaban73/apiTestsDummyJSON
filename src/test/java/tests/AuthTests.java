@@ -1,8 +1,8 @@
 package tests;
 
-import clients.AuthClient;
-import dto.LoginRequest;
-import dto.LoginAndAuthResponse;
+import api.clients.AuthClient;
+import api.dto.LoginRequest;
+import api.dto.LoginAndAuthResponse;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
 

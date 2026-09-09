@@ -1,6 +1,6 @@
-package specs;
+package api.specs;
 
-import config.Config;
+import core.config.Config;
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
 

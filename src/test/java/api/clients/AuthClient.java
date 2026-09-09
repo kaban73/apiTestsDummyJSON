@@ -1,8 +1,8 @@
-package clients;
+package api.clients;
 
-import dto.LoginRequest;
+import api.dto.LoginRequest;
+import api.specs.RequestSpecFactory;
 import io.restassured.response.Response;
-import specs.RequestSpecFactory;
 
 import static io.restassured.RestAssured.given;
 

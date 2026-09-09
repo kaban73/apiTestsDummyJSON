@@ -1,4 +1,4 @@
-package dto;
+package api.dto;
 
 public record LoginRequest(
         String username,
