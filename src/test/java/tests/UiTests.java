@@ -14,7 +14,7 @@ public class UiTests {
 
     private WebDriver driver;
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void setUp() {
         driver = new ChromeDriver();
         driver.get("https://www.saucedemo.com/");
@@ -63,10 +63,10 @@ public class UiTests {
         driver.findElement(By.id("login-button"))
                 .click();
 
-        boolean errorDisplayed =
+        assertTrue(
                 driver.findElement(By.cssSelector("[data-test='error']"))
-                        .isDisplayed();
-
-        assertTrue(errorDisplayed);
+                        .isDisplayed()
+        );
     }
 }
+

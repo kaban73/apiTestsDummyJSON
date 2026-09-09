@@ -10,7 +10,7 @@ import static org.testng.Assert.*;
 
 public class AuthTests {
 
-    @Test
+    @Test(groups = "smoke")
     public void authLoginTest() {
         LoginRequest request = new LoginRequest(
                 "emilys",
@@ -32,7 +32,7 @@ public class AuthTests {
         assertFalse(loginResponse.refreshToken().isBlank());
     }
 
-    @Test
+    @Test(groups = "smoke")
     public void authMeTest() {
         LoginRequest request = new LoginRequest(
                 "emilys",
