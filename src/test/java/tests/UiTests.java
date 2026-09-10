@@ -51,7 +51,7 @@ public class UiTests {
                 "Wrong title"
         );
     }
-
+    String abc = 123;
     @Test(groups = "regression")
     public void invalidLoginTest() {
         driver.findElement(By.id("user-name"))
