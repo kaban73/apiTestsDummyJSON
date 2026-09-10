@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    tools {
+        maven 'maven'
+    }
+
     parameters {
         choice(
             name: 'TEST_GROUP',
@@ -19,7 +23,11 @@ pipeline {
 
         stage('Test') {
             steps {
-                bat 'mvn clean test -Dgroups=%TEST_GROUP%'
+                echo "Running group: ${params.TEST_GROUP}"
+
+                bat """
+                    mvn clean test -Dgroups=${params.TEST_GROUP}
+                """
             }
         }
     }
