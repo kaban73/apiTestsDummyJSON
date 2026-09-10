@@ -48,10 +48,10 @@ public class UiTests {
 
         assertEquals(
                 driver.findElement(By.className("title")).getText(),
-                "Wrong title"
+                "Products"
         );
     }
-    String abc = 123;
+
     @Test(groups = "regression")
     public void invalidLoginTest() {
         driver.findElement(By.id("user-name"))
