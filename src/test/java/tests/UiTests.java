@@ -48,7 +48,7 @@ public class UiTests {
 
         assertEquals(
                 driver.findElement(By.className("title")).getText(),
-                "Products"
+                "Wrong title"
         );
     }
 
