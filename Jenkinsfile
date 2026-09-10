@@ -21,13 +21,16 @@ pipeline {
             }
         }
 
-        stage('Test') {
+        stage('Compile') {
             steps {
-                echo "Running group: ${params.TEST_GROUP}"
+                bat 'mvn test-compile -DskipTests'
+            }
+        }
 
-                bat """
-                    mvn clean test -Dgroups=${params.TEST_GROUP}
-                """
+        stage('Tests') {
+            steps {
+                echo "Running TestNG group: ${params.TEST_GROUP}"
+                bat "mvn test -Dgroups=${params.TEST_GROUP}"
             }
         }
     }
